@@ -1,11 +1,11 @@
 
-		tipo	id
-abrir		1	#	modo	tiempo
-cerrar		2	#
-estado		3
-return_estado	4	#	estado
-ack		5 	#
-err		6	#
+				tipo	id
+abrir			1		#		modo	tiempo
+cerrar			2		#
+estado			3
+return_estado	4		#		estado
+ack				5 		#
+err				6		#
 
 
 **Estas son las cadenas que tenemos que utilizar en el primer ejercicio**
