@@ -12,4 +12,3 @@ format = f'!h{str(l)}s'
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     data = struct.pack(format, len(word), word)
     s.sendto(data, ('localhost', 12345))
-git 
