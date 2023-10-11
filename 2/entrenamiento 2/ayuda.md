@@ -16,7 +16,7 @@ para hacer este ejercicio se proporcionan ejemplos parecidos, hay que entender t
 envelope{ 
 	num tipo
 	bytes msg
-	}
-	para hacerlo con un socket, hay que especificar un tipo de mensaje generico que tiene dentro los diferentes tipos de mensaje que hay que utilizar.
-	
-	si no hay que utilizar diversos sockets para cada acción, un total de 6 socket y ha dicho que lo mismo para este tipo de implementación hay tambien que utilizar hilos.
+}
+para hacerlo con un socket, hay que especificar un tipo de mensaje generico que tiene dentro los diferentes tipos de mensaje que hay que utilizar.
+
+si no hay que utilizar diversos sockets para cada acción, un total de 6 socket y ha dicho que lo mismo para este tipo de implementación hay tambien que utilizar hilos.
