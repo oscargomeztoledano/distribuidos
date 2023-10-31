@@ -12,7 +12,7 @@ if len(sys.argv) != 3:
     sys.exit(1)
 
 server = sys.argv[1]
-port = sys.argv[2]
+port = sys.argv[2
 channel = grpc.insecure_channel(f'{server}:{port}')
 stub = hello_pb2_grpc.HelloStub(channel)
 message = hello_pb2.PrintRequest(message='hello')
