@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
-import argparse
 import paho.mqtt.client as mqtt
 import json
-
+import argparse
 
 
 def print_hot_deal(deal):
@@ -28,18 +27,29 @@ def on_message(client, userdata, msg):
     print_deal(deal) if deal['discount'] < 50 else print_hot_deal(deal)
 
 
-# Analizar los argumentos de la línea de comandos
-parser = argparse.ArgumentParser(description='Subscribe to videogame deal notifications.')
-parser.add_argument('-d', '--developer', nargs='+', default=['+'], help='the developers the user is interested in', required=False)
-parser.add_argument('-t', '--type', nargs='*', default=['+'], help='the types of videogames the user is interested in',required=False)
+parser = argparse.ArgumentParser(
+    description='Subscribe to videogame deal notifications.')
+
+parser.add_argument(
+    '-d', '--developer',
+    nargs='+',
+    default=['+'],  # all developers
+    help='Specify developer(s) of interest.',
+    required=False)
+
+parser.add_argument(
+    '-t', '--type',
+    nargs='+',
+    default=['+'],  # all types of videogames
+    help='Specify type(s) of videogames of interest.',
+    required=False)
+
 args = parser.parse_args()
 
-# Crear un cliente MQTT, conectarlo al broker y definir la función de callback
 subscriber = mqtt.Client()
 subscriber.on_message = on_message
 subscriber.connect('localhost')
 
-#
 for vg_type in args.type:
     for vg_developer in args.developer:
         subscriber.subscribe(
